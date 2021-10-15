@@ -1,6 +1,6 @@
 /*
 ------------------------------------------------------------------------
-* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template * 
+* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template *
 * Author           : ThemesBoss                                        *
 * Version          : 1.0.0                                             *
 * Created          : May 2018                                        *
@@ -10,7 +10,7 @@
 
 
 /***********************
-    1.BASIC           
+    1.BASIC
     2.HELPER
     3.NAVBAR
     4.HOME
@@ -477,7 +477,7 @@ button:focus {
     font-size: 72px;
     font-weight: 400;
     line-height: 1.2;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .header_subtitle {

@@ -504,6 +504,15 @@ button:focus {
     z-index: 8;
 }
 
+.scroll_down_opportunities {
+    bottom: 5vh;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    z-index: 8;
+}
+
 .scroll_down i {
     position: relative;
     -webkit-animation: bounce 2s infinite;

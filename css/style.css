@@ -717,7 +717,7 @@ button:focus {
     font-size: 18px;
     font-weight: 600;
     margin-top: 0;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .cv_desc {

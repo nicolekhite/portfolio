@@ -214,24 +214,10 @@ $(document).ready(function(){
     $('form').on("submit",function(){
       swal({
       title: "Message sent!",
+      text: "Nicole will usually respond within 48 hours.",
       icon: "success",
-      timer: 4000,
-      buttons: {
-        confirm: {
-          text: "OK",
-          value: true,
-          visible: false,
-          className: "",
-          closeModal: true
-        },
-        cancel: {
-          text: "Cancel",
-          value: false,
-          visible: false,
-          className: "",
-          closeModal: true,
-        }
-      }
+      timer: 3000,
+      button: "Sounds good!"
       });
     });
 });

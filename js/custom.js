@@ -216,7 +216,6 @@ $(document).ready(function(){
       title: "Message sent!",
       text: "Nicole will usually respond within 48 hours.",
       icon: "success",
-      timer: 3000,
       button: "Sounds good!"
       });
     });

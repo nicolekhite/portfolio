@@ -74,8 +74,8 @@
                                 $this.text(Math.floor(this.countNum));
                             },
                             complete: function() {
-                                $this.text(this.countNum);
-                                $this.text($this.text() + "aaaa"); 
+                                $this.text("hello");
+                                //$this.text($this.text() + "1111");
 
                                 //if($this.attr('plus') == 'True') $this.text(this.countNum + "+");
                                 //alert('finished');

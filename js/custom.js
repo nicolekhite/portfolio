@@ -1,6 +1,6 @@
 /*
 ------------------------------------------------------------------------
-* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template * 
+* Template Name    : Elvish | Responsive Bootstrap 4 Personal Template *
 * Author           : ThemesBoss                                        *
 * Version          : 1.0.0                                             *
 * Created          : May 2018                                          *
@@ -11,10 +11,10 @@
 ! function($) {
     "use strict";
 
-    var ElvishApp = function() {};
+    var NicolePortfolio = function() {};
 
     //Preloader
-    ElvishApp.prototype.initPreLoader = function() {
+    NicolePortfolio.prototype.initPreLoader = function() {
         $('#status').fadeOut();
         $('#preloader').delay(350).fadeOut('slow');
         $('body').delay(350).css({
@@ -23,7 +23,7 @@
     },
 
     //scroll
-    ElvishApp.prototype.initNavbarStickey = function() {
+    NicolePortfolio.prototype.initNavbarStickey = function() {
         $(window).on('scroll',function() {
             var scroll = $(window).scrollTop();
 
@@ -36,7 +36,7 @@
     },
 
     //Smooth
-    ElvishApp.prototype.initNavbarSmooth = function() {
+    NicolePortfolio.prototype.initNavbarSmooth = function() {
         $('.navbar-nav a, .scroll_down a').on('click', function(event) {
             var $anchor = $(this);
             $('html, body').stop().animate({
@@ -47,14 +47,14 @@
     },
 
     //ScrollSpy
-    ElvishApp.prototype.initNavbarScrollSpy = function() {
+    NicolePortfolio.prototype.initNavbarScrollSpy = function() {
         $("#navbarCollapse").scrollspy({
             offset: 20
         });
     },
 
     //Funfacts
-    ElvishApp.prototype.initFunFacts = function() {
+    NicolePortfolio.prototype.initFunFacts = function() {
         var a = 0;
         $(window).on('scroll',function() {
             var oTop = $('#counter').offset().top - window.innerHeight;
@@ -75,6 +75,7 @@
                             },
                             complete: function() {
                                 $this.text(this.countNum);
+                                if($this.attr('plus') == 'True') $this.text(this.countNum + "+");
                                 //alert('finished');
                             }
 
@@ -86,7 +87,7 @@
     },
 
     //Portfolio Filter
-    ElvishApp.prototype.initPortfolioFilter = function() {
+    NicolePortfolio.prototype.initPortfolioFilter = function() {
         $(window).on('load', function () {
             var $container = $('.work-filter');
             var $filter = $('#menu-filter');
@@ -117,7 +118,7 @@
     },
 
     //Magnificpop
-    ElvishApp.prototype.initMfpImages = function() {
+    NicolePortfolio.prototype.initMfpImages = function() {
         $('.img-zoom').magnificPopup({
             type: 'image',
             closeOnContentClick: true,
@@ -131,7 +132,7 @@
     },
 
     //ClientSlider
-    ElvishApp.prototype.initClientSlider = function() {
+    NicolePortfolio.prototype.initClientSlider = function() {
         $("#owl-demo").owlCarousel({
             autoPlay: 7000,
             stopOnHover: true,
@@ -144,7 +145,7 @@
     },
 
     //MfpVideo
-    ElvishApp.prototype.initMfpVideo = function() {
+    NicolePortfolio.prototype.initMfpVideo = function() {
         $('.blog_play').magnificPopup({
             disableOn: 700,
             type: 'iframe',
@@ -156,14 +157,14 @@
     },
 
     //Back To Top
-    ElvishApp.prototype.initBackToTop = function() {
+    NicolePortfolio.prototype.initBackToTop = function() {
         $(window).on('scroll',function(){
             if ($(this).scrollTop() > 100) {
                 $('.back_top').fadeIn();
             } else {
                 $('.back_top').fadeOut();
             }
-        }); 
+        });
         $('.back_top').click(function(){
             $("html, body").animate({ scrollTop: 0 }, 1000);
             return false;
@@ -171,7 +172,7 @@
     },
 
     //Typed Text
-    ElvishApp.prototype.initTypedText = function() {
+    NicolePortfolio.prototype.initTypedText = function() {
         $(".element").each(function() {
             var $this = $(this);
             $this.typed({
@@ -180,9 +181,9 @@
                 backDelay: 3000
             });
         });
-    },  
+    },
 
-    ElvishApp.prototype.init = function() {
+    NicolePortfolio.prototype.init = function() {
         this.initPreLoader();
         this.initNavbarStickey();
         this.initNavbarSmooth();
@@ -197,11 +198,37 @@
     },
 
     //init
-    $.ElvishApp = new ElvishApp, $.ElvishApp.Constructor = ElvishApp
+    $.NicolePortfolio = new NicolePortfolio, $.NicolePortfolio.Constructor = NicolePortfolio
 }(window.jQuery),
 
 //initializing
 function($) {
     "use strict";
-    $.ElvishApp.init();
+    $.NicolePortfolio.init();
 }(window.jQuery);
+
+$(document).ready(function(){
+    $('form').on("submit",function(){
+      swal({
+      title: "Message sent!",
+      icon: "success",
+      timer: 4000,
+      buttons: {
+        confirm: {
+          text: "OK",
+          value: true,
+          visible: false,
+          className: "",
+          closeModal: true
+        },
+        cancel: {
+          text: "Cancel",
+          value: false,
+          visible: false,
+          className: "",
+          closeModal: true,
+        }
+      }
+      });
+    });
+});

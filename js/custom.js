@@ -75,7 +75,7 @@
                             },
                             complete: function() {
                                 $this.text(this.countNum);
-                                $this.text($this.text() + "+"); 
+                                $this.text($this.text() + "aaaa"); 
 
                                 //if($this.attr('plus') == 'True') $this.text(this.countNum + "+");
                                 //alert('finished');

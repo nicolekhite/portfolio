@@ -71,7 +71,7 @@
                             duration: 2000,
                             easing: 'swing',
                             step: function() {
-                                $this.text(Math.floor(this.countNum));
+                                $this.text(Math.floor(this.countNum)+1);
                             },
                             complete: function() {
                                 // NOTE: THIS CODE WILL NOT RUN BECAUSE PERMISSIONS-POLICY INTEREST-COHORT GITHUB PAGES RESTRICTIONS

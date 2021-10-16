@@ -74,7 +74,8 @@
                                 $this.text(Math.floor(this.countNum));
                             },
                             complete: function() {
-                                $this.text("hello");
+                                // NOTE: THIS CODE WILL NOT RUN BECAUSE PERMISSIONS-POLICY INTEREST-COHORT GITHUB PAGES RESTRICTIONS
+                                //$this.text("hello");
                                 //$this.text($this.text() + "1111");
 
                                 //if($this.attr('plus') == 'True') $this.text(this.countNum + "+");

@@ -663,7 +663,7 @@ button:focus {
 
 .bg-funfact {
     position: relative;
-    background-image: url(../images/img-1.png);
+    background-image: url(../images/img-2.png);
     background-size: cover;
     background-position: center center;
 }
@@ -744,7 +744,7 @@ button:focus {
     position: relative;
     background-image: url(../images/img-2.png);
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
 }
 
 

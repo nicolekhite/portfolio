@@ -41,6 +41,9 @@
   max-width: 500px;
   margin: 20px auto;
 }
+.simple-ajax-popup{
+   cursor: pointer;
+}
 /*======================
         1.BASIC
 ========================*/

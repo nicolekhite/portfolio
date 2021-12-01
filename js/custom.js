@@ -12,7 +12,9 @@
   "use strict";
 
   var NicolePortfolio = function() {};
-
+  $(document).ready(function(){
+          $("#myModal").modal('show');
+      });
   //Preloader
   NicolePortfolio.prototype.initPreLoader = function() {
       $('#status').fadeOut();

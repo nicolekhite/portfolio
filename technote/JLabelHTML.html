@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="TechNote assignment">
+  <meta name="author" content="MPQ">
+
+  <title>JSlider Technote</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- MODIFY FROM HERE AND BELOW -->
+
+  <div class="container">
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>Technote:</strong></div>
+      <div class="col-10">JLabels with HTML in Java</div>
+    </div>
+    <!-- Author -->
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>Author:</strong></div>
+      <div class="col-10">Nicole Kehaulani Hite</div>
+    </div>
+    <!-- Motivation -->
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>Summary:</strong></div>
+      <div class="col-10">This document explains how the <code>JLabel</code> works with <code>HTML</code> and how it can be implemented in Java.</div>
+    </div>
+    <!-- Description -->
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>Description:</strong></div>
+      <div class="col-10">
+        <p><code>JLabels</code> are a Swing component in Java that is used to display strings and/or image icons. For this example of a <code>JLabel</code>, we'll be
+          using the basic constructor as follows and adding it to the <code>JPanel</code> & <code>JFrame</code>:</p>
+
+        <pre class="border"><code>// Label 1 - Basic JLabel
+JLabel label = new JLabel("This is a simple test label");</code></pre>
+
+        <p>By creating a JLabel and adding it to the <code>JPanel</code> and <code>JFrame</code>, the program will look like the following when run:</p>
+        <img src="images/label1.png" alt="HTML">
+        <p><br>Now, <code>JLabels</code> have plenty of methods to change the font colors, size, and styles with the usage of <code>Font</code> objects. For example,
+          the following code will set the font to change colors with the use of a Font object and JLabels methods.</p>
+
+        <pre class="border"><code>// Adjust style of JLabel without HTML
+label.setFont(new Font("Sans-Serif", Font.BOLD, 12));
+label.setForeground(new Color(0x4287f5));</code></pre>
+
+        <p>While this is simple, using <cod>HTML</code> inside the <code>JLabel</code> will also accomplish this without the use of <code>Font</code> objects or method calls since it directly marks up the text itself. </p>
+        <p>To demonstrate the capabilities of using <code>HTML</code> within the <code>JLabel</code>, we can create a few more <code>JLabels</code>. This time, we will surround
+          the string used in the constructor with <b>&lthtml&gt</b> and <b>&lt/html&gt</b> tags to indicate that the string contains <code>HMTL</code>.</p>
+
+        <pre class="border"><code>// Label 2 - Setting up JLabel for HTML
+JLabel label2 = new JLabel("&lthtml&gtThis is an HTML test label&lt/html&gt")</code></pre>
+        <p>This will look the same as the first label because we haven't added any tags to the HTML, keeping it very basic.</p>
+        <p>Now that we have a <code>JLabel</code> that is ready for HTML, we can add HTML tags within the &lthtml&gt's and the changes will be reflected when the
+          program is run. You can find more HTML tags <a href="http://www.simplehtmlguide.com/cheatsheet.php">here</a>, primarily in the section listed for "Text Formatting".
+          For the next example, we'll use HTML to <u>underlined</u> the text in the <code>JLabel</code>. To do this, we'll create another <code>JLabel</code> and change the
+          String within the <code>JLabel</code> constructor to have the tag for underlining (<b>&ltu&gt</b>) surround the String. By doing this, it will make the text <u>underlined</u>.</p>
+
+        <pre class="border"><code>// Label 3 - Set up JLabel for underline HTML
+JLabel label3 = new JLabel("&lthtml&gt&ltu&gtThis is an underlined test label&lt/u&gt&lthtml&gt");</code></pre>
+
+        <img src="images/label3.png" alt="Underline">
+
+        <p>Now that we know how the basics of using <code>HTML</code> in <code>JLabels</code>, we can add more complex HTML in these <code>JLabels</code> such as putting
+          a table inside of the <code>JLabel</code>, or using in-line CSS to change the looks of the text.</p>
+        <p>Below is an example of putting a table into the <code>JLabel</code> with the basics used in <b>label2</b> above with the <b>&lthtml&gt</b>. The only difference is changing the original
+          string to the code for a table, and adding in a border using some inline CSS to make it more visible.</p>
+        <pre class="border"><code>// Label 4 - Table in HTML
+String table = "&lthtml&gt&lttable border = '1'&gt"
+    + "&lttr&gt"
+    + "&ltth>Name&lt/th&gt&ltth&gtCompany&lt/th&gt&ltth&gtPosition&lt/th&gt"
+    + "&lt/tr&gt"
+    + "&lttr&gt"
+    + "&lttd>Norm Niner&lt/td&gt&lttd&gtApple&lt/td&gt&lttd&gtSoftware Engineer&lt/td&gt"
+    + "&lttr&gt"
+    + "&lttd&gtNorma Niner&lt/td&gt&lttd&gtMicrosoft&lt/td&gt&lttd&gtCEO&lt/td&gt"
+    + "&lt/tr>"
+    + "&lt/table>&lt/html&gt";
+JLabel label4 = new JLabel(table);</code></pre>
+
+        <p>As a result of the code above, the label will appear in the format of an HTML table below the other JLabels and look like the following:</p>
+        <img src="images/label4.png" alt="Table">
+
+        <p>As shown by the example above by adding the border, we can also add inline CSS to style our JLabels. A simple example can be shown below by the usage of <b>&ltfont&gt</b>. In this example,
+          we change the color of the text by surrounding the text with <b>&ltfont&gt</b> and specifying the color of the font by doing <b>&ltfont color=orange&gt</b> and closing the tag with <b>&lt/font&gt</b>.</p>
+
+        <pre class="border"><code>// Label 5 - Color with HTML
+JLabel label5 = new JLabel("&lthtml&gtThis is a &ltfont color=orange&gtcolor&lt/font&gt test label&lt/html&gt");</code></pre>
+
+        <img src="images/label5.png" alt="Orange">
+      </div>
+    </div>
+
+    <!-- Downloads Section -->
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>Downloads:</strong></div>
+      <div class="col-10">
+        <ul>
+          <li>Download Java SE 8 <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">here</a>.</li>
+          <li>Download NetBeans <a href="https://netbeans.org/community/releases/82/">here</a>.</li>
+          <li>Find the code for JLabelHTML.java <a href="files/JLabelHTML.java" download="JLabelHTML.java">here</a>, which contains all the label examples used here.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- See Also Section -->
+    <div class="row border-top mt-2 pt-2">
+      <div class="col-2"><strong>See Also:</strong></div>
+      <div class="col-10">
+        <ul>
+          <li><a href="https://docs.oracle.com/javase/7/docs/api/javax/swing/JLabel.html">JLabel Java Documentation</a>, accessed on November 11, 2020</li>
+          <li><a href="https://docs.oracle.com/javase/tutorial/uiswing/components/html.html">Oracle HTML in Swing Components</a>, accessed on November 11, 2020</li>
+          <li><a href="https://www.w3schools.com/tags/default.asp">W3 Schools HTML</a>, accessed on November 11, 2020</li>
+          <li><a href="http://www.simplehtmlguide.com/cheatsheet.php">HTML Cheat Sheet</a>, accessed on November 11, 2020</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- DO NOT
+                CHANGE ANYTHING BELOW -->
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
